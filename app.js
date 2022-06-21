@@ -16,6 +16,10 @@ app.use('/quiz', Quiz_Question);
 app.use('/admin', Admin);
 app.use('/answer', User_Answer);
 
+app.get('/', (req, res) => {
+    res.sendFile('D:/Summer Internship/Quiz App/index.html');
+});
+
 mongoose.connect(url, () => console.log("Connected to Database!!!"));
 
 app.listen(3000, () => console.log("Listening to post 3000..."));
