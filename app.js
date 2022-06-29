@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const Authentication = require('./routes/auth');
-const Quiz_Question = require('./routes/quiz');
+const Quiz = require('./routes/quiz');
+const Quiz_Question = require('./routes/question');
 const Admin = require('./routes/admin');
 const User_Answer = require('./routes/answer');
 
@@ -12,7 +13,8 @@ var url = `mongodb+srv://${username}:${password}@cluster0.l2jjyym.mongodb.net/Qu
 
 app.use(express.json());
 app.use('/auth', Authentication);
-app.use('/quiz', Quiz_Question);
+app.use('/quiz', Quiz);
+app.use('/question', Quiz_Question);
 app.use('/admin', Admin);
 app.use('/answer', User_Answer);
 
