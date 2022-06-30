@@ -18,6 +18,16 @@ router.post('/add', async (req, res) => {
     }
 });
 
+// Read Questions
+router.get('/:topic', async (req, res) => {
+    try {
+        const ques = await Quiz.find({topic: req.params.topic});
+        res.json(ques);
+    } catch (err) {
+        res.json(err);
+    }
+});
+
 // Delete Question
 router.delete('/remove', async (req, res) => {
     try {

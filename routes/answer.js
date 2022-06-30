@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Quiz = require('../models/User_Answer');
 
-// Add Question
+// Add Answer
 router.post('/add', async (req, res) => {
     const ans = new Quiz({
         userId: req.body.userId,
@@ -17,7 +17,7 @@ router.post('/add', async (req, res) => {
     }
 });
 
-// Update Question
+// Update Answer
 router.put('/update', async (req, res) => {
     try {
             const updatedAns = await Quiz.updateOne({userId: req.body.userId, quesId: req.body.quesId}, { 
